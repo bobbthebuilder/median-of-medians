@@ -3,7 +3,7 @@ a selection algorithm based on quickselect.
 
 ## Example Usage
 
-1. download `medians_of_medians.h`
+1. download `median_of_medians.h`
 2. create file `test.cpp`:
 
 ``` cpp
