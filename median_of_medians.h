@@ -31,10 +31,10 @@ namespace detail
 {
 
 template<typename Iter,
-         typename Sorter = decltype(std::sort<Iter>),
-         typename Difference_type = typename Iter::difference_type>
+         typename Difference_type = typename Iter::difference_type,
+         typename Sorter = decltype(std::sort<Iter>)>
 Iter
-median_of_medians(Iter first, Iter last, Sorter& sorter = std::sort<Iter>, Difference_type s = 5)
+median_of_medians(Iter first, Iter last, Difference_type s = 5, Sorter sorter = std::sort<Iter>)
 {
     assert(s > 2);
 
@@ -72,7 +72,7 @@ median_of_medians(Iter first, Iter last, Sorter& sorter = std::sort<Iter>, Diffe
         ++end_of_medians;
     }
 
-    median_of_medians(begin, end_of_medians, sorter, s);
+    median_of_medians(begin, end_of_medians, s, sorter);
 }
 
 } // namespace detail
